@@ -7,6 +7,7 @@ const Game = () => {
   const [gameRound, setGameRound] = useState(1);
   const [corrects, setCorrects] = useState(0);
   const [searchParams] = useSearchParams();
+  console.log(searchParams);
 
   function getRandomInt(min: number, max: number) {
     min = Math.ceil(min);
