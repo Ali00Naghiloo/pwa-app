@@ -17,14 +17,15 @@ const LinkCom = ({ value, route }: types) => {
       >
         <Link
           style={{
-            background: "#40F8FF",
+            background: "#614bc3",
             textDecoration: "none",
-            color: "#111",
+            color: "#fff",
             fontSize: "25px",
             width: "100%",
             borderRadius: "50%",
+            padding: "2px",
           }}
-          to={`/game?${route}`}
+          to={`/game?t=${route}`}
         >
           {value}
         </Link>

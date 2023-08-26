@@ -9,30 +9,40 @@ import {
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useFormController from "../hook/useFormController";
+import MusicNoteIcon from "@mui/icons-material/MusicNote";
+import MusicOffIcon from "@mui/icons-material/MusicOff";
 
 const LoginPage = () => {
   const [audio, setAudio] = useState(new Audio("./assets/life.mp3"));
+  const [isPlaying, setIsPlaying] = useState(0);
   const { formik } = useFormController();
 
   return (
     <>
-      <div>
-        <button
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "20px",
+          left: "50%",
+          transform: "translate(-50%)",
+        }}
+      >
+        <Button
           onClick={() => {
-            return audio.play();
+            isPlaying === 0
+              ? (audio.play(), setIsPlaying(1))
+              : (audio.pause(), setIsPlaying(0));
           }}
         >
-          play
-        </button>
-        <button
+          {isPlaying ? <MusicOffIcon /> : <MusicNoteIcon />}
+        </Button>
+        <Button
           onClick={() => {
             setAudio(new Audio("./assets/life.mp3"));
             return audio.pause();
           }}
-        >
-          pause
-        </button>
-      </div>
+        ></Button>
+      </Box>
 
       <div>
         <Box
