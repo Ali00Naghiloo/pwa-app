@@ -5,6 +5,7 @@ import {
   setGameRound,
 } from "../../../reducers/gameRoundReducer";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 type propType = {
   values: {
@@ -15,6 +16,7 @@ type propType = {
 type options = { content: number; isCorrect: boolean }[];
 
 const Quiz = ({ values }: propType) => {
+  const navigate = useNavigate();
   const [options, setOptions] = useState<options>([]);
   const [corrects, setCorrects] = useState(0);
 
@@ -90,7 +92,8 @@ const Quiz = ({ values }: propType) => {
             <p>Correct Answears : {corrects}</p>
             <Button
               onClick={() => {
-                dispatch(setGameRound(0));
+                dispatch(setGameRound(1));
+                navigate("/menu");
               }}
             >
               Repeat
