@@ -29,11 +29,11 @@ const Quiz = ({ values }: propType) => {
       },
       {
         content: values.x + 2 + values.y,
-        isCorrect: true,
+        isCorrect: false,
       },
       {
         content: values.x + values.y + 3,
-        isCorrect: true,
+        isCorrect: false,
       },
       {
         content: values.x + 5 + values.y,
