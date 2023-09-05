@@ -6,6 +6,7 @@ import {
 } from "../../../reducers/gameRoundReducer";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 type propType = {
   values: {
@@ -42,6 +43,10 @@ const Quiz = ({ values }: propType) => {
         isCorrect: false,
       },
     ]);
+
+    if (corrects === 3 || gameRound % 3 === 0) {
+      toast.success("nice");
+    }
   }, [gameRound]);
 
   function shuffleArray(array: any) {
@@ -59,6 +64,18 @@ const Quiz = ({ values }: propType) => {
 
   return (
     <>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <div className="quiz-box">
         {gameRound <= 10 ? (
           <>
@@ -93,7 +110,7 @@ const Quiz = ({ values }: propType) => {
             <Button
               onClick={() => {
                 dispatch(setGameRound(1));
-                navigate("/menu");
+                navigate("/game");
               }}
             >
               Repeat

@@ -1,4 +1,5 @@
 import "./App.scss";
+import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
 import Menu from "./components/menu/Menu";

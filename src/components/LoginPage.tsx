@@ -114,9 +114,9 @@ const LoginPage = () => {
             Start Game
           </Button>
         </Box>
-        <Button>
-          <Link to="/menu">Menu</Link>
-        </Button>
+        <Link to="/menu">
+          <Button>Menu</Button>
+        </Link>
       </div>
     </>
   );
