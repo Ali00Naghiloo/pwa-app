@@ -48,6 +48,10 @@ body {
     -webkit-box-shadow: 10px 10px 108px -9px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 108px -9px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 108px -9px rgba(0, 0, 0, 0.75);
+
+    p {
+      font-size: 25px;
+    }
   }
 
   .options-box {
@@ -58,6 +62,7 @@ body {
       color: #fff;
       border: 2px solid #fff;
       margin: 2px;
+      font-size: 17px;
     }
   }
 

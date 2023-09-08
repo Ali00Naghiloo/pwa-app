@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PWA Game</title>
-    <meta name="description" content="My Awesome App description" />
+    <meta name="description" content="PWA Game" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <link rel="mask-icon" href="/mask-icon.svg" color="#FFFFFF" />
@@ -13,12 +13,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker.register("/sw.js");
-        });
-      }
-    </script>
   </body>
 </html>
